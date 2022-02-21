@@ -1,3 +1,20 @@
 body {
+    margin: 0;
     background-color: #D2B48C;
+}
+
+#character-list{
+    display: flex;
+    margin: 5px;
+    height: 200px;
+    background-color: #f2f3ae;
+    overflow: auto;
+}
+
+img{
+    margin: 10px;
+}
+
+#character-info{
+    display: flex;
 }
