@@ -56,3 +56,7 @@ function hookupSeenButton(){
         }
     })
 }
+
+function handleSearchForm(){
+    
+}

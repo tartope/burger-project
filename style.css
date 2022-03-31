@@ -22,3 +22,13 @@ img{
 #character-image{
     border: solid black 2px;
 }
+
+#character-search-form{
+    border: solid black 2px;
+    margin-left: 550px;
+    padding: 10px;
+}
+
+.search-segments{
+    margin: 20px;
+}
