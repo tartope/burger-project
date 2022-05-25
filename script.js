@@ -1,9 +1,12 @@
 //GET data from API
+let characters;
+
 fetch('https://bobsburgers-api.herokuapp.com/characters/')
     .then(response => response.json())
     .then(charactersData => {
         // console.log(charactersData)
-        charactersData.forEach(character =>{
+        characters = charactersData
+        charactersData.map(character =>{
             buildNavList(character)
         })
         buildCharacterInfo(charactersData[0])
@@ -38,6 +41,8 @@ function buildCharacterInfo(character){
     occupation.textContent = character.occupation
     firstEpisode.textContent = `First episode: ${character.firstEpisode}`
     seen.textContent = seen ? 'Seen' : 'Not seen'
+
+    
 }
 
 let seenButton = document.getElementById('seen')
@@ -57,6 +62,43 @@ function hookupSeenButton(){
     })
 }
 
-function handleSearchForm(){
-    
-}
+
+// const characterSearchForm = document.getElementById('character-search-form')
+// // console.log(characterSearchForm)
+// characterSearchForm.addEventListener('submit', (e)=>{
+//     e.preventDefault();
+//     const characterInput = characterSearchForm.character.value;
+//     const foundCharacter = characters.find(item =>{
+//         return item.name === characterInput
+//     });
+//     if (foundCharacter !== undefined) {
+//         navList.innerHTML = '';
+//         buildNavList(foundCharacter);
+//         buildCharacterInfo(foundCharacter);
+//     }
+//     else {
+//         alert('Character not found');
+//     }
+//     characterSearchForm.reset();
+//     // document.getElementById('character-image').setAttribute("src", foundCharacter.image)
+//     // document.getElementById('character-name').innerText = foundCharacter.name
+//     // document.getElementById('occupation').innerText = foundCharacter.occupation
+//     // document.getElementById('first-episode').innerText = foundCharacter.firstEpisode
+//     // do same as above for occupation and first episode.
+// })
+
+const characterSearch = document.getElementById('character-search')
+// console.log(characterSearch)
+characterSearch.addEventListener('keyup', (e)=>{
+    // console.log(e.target.value)
+    // if searchString 'H' make it 'h'
+    // if searchString 'h' make it 'h' 
+    const searchString = e.target.value.toLowerCase();
+    // // console.log(searchString)
+    const filteredCharacters = characters.filter(character =>{
+        //convert name to lowercare and compare
+        return character.name.toLowerCase().includes(searchString)
+    })
+    console.log(filteredCharacters)
+    buildNavList(filteredCharacters)
+});

@@ -13,6 +13,8 @@ body {
 
 img{
     margin: 10px;
+    max-width: 150px;
+    max-height: 255px
 }
 
 #character-info{
@@ -23,9 +25,10 @@ img{
     border: solid black 2px;
 }
 
-#character-search-form{
+#character-search{
     border: solid black 2px;
     margin-left: 550px;
+    margin-right: 500px;
     padding: 10px;
 }
 
