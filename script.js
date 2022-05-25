@@ -86,23 +86,3 @@ characterSearch.addEventListener('keyup', (e)=>{
     // console.log(filteredCharacters)
     // characterSearch.reset();
 });
-
-
-// const characterSearchForm = document.getElementById('character-search-form');
-// // console.log(characterFinderForm)
-// characterSearchForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     const characterInput = characterSearchForm.character.value.toLowerCase();
-//     const foundCharacter = characters.find(character => {
-//         return character.name.toLowerCase() === characterInput;
-//     });
-//     if (foundCharacter !== undefined) {
-//         navList.innerHTML = '';
-//         buildNavList(foundCharacter);
-//         buildCharacterInfo(foundCharacter);
-//     }
-//     else {
-//         alert('No character found');
-//     }
-//     characterSearchForm.reset();
-// })
