@@ -62,31 +62,6 @@ function hookupSeenButton(){
     })
 }
 
-
-// const characterSearchForm = document.getElementById('character-search-form')
-// // console.log(characterSearchForm)
-// characterSearchForm.addEventListener('submit', (e)=>{
-//     e.preventDefault();
-//     const characterInput = characterSearchForm.character.value;
-//     const foundCharacter = characters.find(item =>{
-//         return item.name === characterInput
-//     });
-//     if (foundCharacter !== undefined) {
-//         navList.innerHTML = '';
-//         buildNavList(foundCharacter);
-//         buildCharacterInfo(foundCharacter);
-//     }
-//     else {
-//         alert('Character not found');
-//     }
-//     characterSearchForm.reset();
-//     // document.getElementById('character-image').setAttribute("src", foundCharacter.image)
-//     // document.getElementById('character-name').innerText = foundCharacter.name
-//     // document.getElementById('occupation').innerText = foundCharacter.occupation
-//     // document.getElementById('first-episode').innerText = foundCharacter.firstEpisode
-//     // do same as above for occupation and first episode.
-// })
-
 const characterSearch = document.getElementById('character-search')
 // console.log(characterSearch)
 characterSearch.addEventListener('keyup', (e)=>{
