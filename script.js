@@ -1,5 +1,5 @@
 //GET data from API
-let characters;
+let characters = [];
 
 fetch('https://bobsburgers-api.herokuapp.com/characters/')
     .then(response => response.json())
@@ -21,6 +21,7 @@ function buildNavList(character){
     pic.src = character.image
     navList.appendChild(pic)
     // console.log(pic)
+
     pic.addEventListener('click', (e)=>{
         // console.log('click')
         buildCharacterInfo(character)
@@ -48,7 +49,7 @@ function buildCharacterInfo(character){
 let seenButton = document.getElementById('seen')
 function hookupSeenButton(){
     seenButton.addEventListener('click', (e)=>{
-        console.log('click')
+        // console.log('click')
         if(oneCharacter.seen === true){
             oneCharacter.seen = false
         }else{
@@ -73,7 +74,35 @@ characterSearch.addEventListener('keyup', (e)=>{
     const filteredCharacters = characters.filter(character =>{
         //convert name to lowercare and compare
         return character.name.toLowerCase().includes(searchString)
-    })
-    console.log(filteredCharacters)
-    buildNavList(filteredCharacters)
+    });
+    if (filteredCharacters.length > 0) {
+        navList.innerHTML = '';
+        filteredCharacters.map(character => buildNavList(character));
+        buildCharacterInfo(filteredCharacters[0]);
+    }
+    else {
+        alert('No characters found');
+    }
+    // console.log(filteredCharacters)
+    // characterSearch.reset();
 });
+
+
+// const characterSearchForm = document.getElementById('character-search-form');
+// // console.log(characterFinderForm)
+// characterSearchForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     const characterInput = characterSearchForm.character.value.toLowerCase();
+//     const foundCharacter = characters.find(character => {
+//         return character.name.toLowerCase() === characterInput;
+//     });
+//     if (foundCharacter !== undefined) {
+//         navList.innerHTML = '';
+//         buildNavList(foundCharacter);
+//         buildCharacterInfo(foundCharacter);
+//     }
+//     else {
+//         alert('No character found');
+//     }
+//     characterSearchForm.reset();
+// })
