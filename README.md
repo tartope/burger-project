@@ -16,3 +16,6 @@ HTML structure, CSS styling, and JavaScript for a dynamic web page.
 [The Bob's Burgers API Documentation](https://www.bobsburgersapi.com/)
 
 [The Bob's Burgers API endpoint used](https://bobsburgers-api.herokuapp.com/characters/)
+
+## Project Link
+[Bob's Burgers Fan](https://bobs-burgers-fan.herokuapp.com/)
